@@ -139,7 +139,7 @@ const WeatherApp = () => {
     fetch(url)
       .then((response) => {
         if (!response.ok)
-          throw new Error("Nije moguće dobiti podatke o vremenu");
+          throw new Error("Unable to get weather data");
         return response.json();
       })
       .then((data) => {
@@ -158,7 +158,7 @@ const WeatherApp = () => {
       .catch((error) => {
         console.error("Greška:", error.message);
         setError(
-          "Nije moguće dobiti podatke o vremenu. Molimo pokušajte ponovo."
+          "Unable to get weather data. Please try again"
         );
         setWeather(null);
         setLoading(false);
@@ -197,13 +197,13 @@ const WeatherApp = () => {
         (error) => {
           console.error("Greška pri dobijanju lokacije:", error);
           setError(
-            "Nije moguće dobiti vašu lokaciju. Molimo unesite grad ručno."
+            "Unable to get your location. Please enter the city manually."
           );
           setLoading(false);
         }
       );
     } else {
-      setError("Geolokacija nije podržana u vašem pretraživaču.");
+      setError("Geolocation is not supported in your browser.");
       setLoading(false);
     }
   };
