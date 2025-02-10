@@ -265,7 +265,7 @@ const WeatherApp = () => {
             <input
               type="text"
               className="w-full p-2 rounded bg-white bg-opacity-80"
-              placeholder="Pretraži grad"
+              placeholder="Search the city"
               value={city}
               onChange={handleInputChange}
               onFocus={() => setShowSuggestions(true)}
